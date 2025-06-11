@@ -5,11 +5,12 @@ import androidx.sqlite.driver.bundled.BundledSQLiteDriver
 import platform.Foundation.NSHomeDirectory
 
 fun getOCRDatabase(): OCRDatabase {
-    val dbFile = NSHomeDirectory() + "/ocrDatabase.db"
+    val dbFile = NSHomeDirectory() + "/ocr.db"
     return Room.databaseBuilder<OCRDatabase>(
         name = dbFile,
         factory = { OCRDatabase::class.instantiateImpl() }
-    )
-    .setDriver(BundledSQLiteDriver(dbFile))
-    .build()
+    ).setDriver(BundledSQLiteDriver())
+        .fallbackToDestructiveMigration(true)
+        .build()
 }
+

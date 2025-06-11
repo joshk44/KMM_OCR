@@ -1,6 +1,5 @@
 package com.joseferreyra.ocr_kmm.database
 
-import androidx.room.Dao
 import androidx.room.Database
 import androidx.room.RoomDatabase
 
@@ -10,7 +9,6 @@ import androidx.room.RoomDatabase
     exportSchema = true
 )
 abstract class OCRDatabase: RoomDatabase() {
-
 
     abstract fun ocrSessionDao(): OCRSessionDao
 
