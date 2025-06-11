@@ -53,6 +53,7 @@ kotlin {
             implementation(libs.sqlite.bundled)
         }
         iosMain.dependencies {
+            implementation(libs.room.runtime)
             implementation(libs.sqlite.bundled)
         }
         commonTest.dependencies {
