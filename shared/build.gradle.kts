@@ -44,7 +44,8 @@ kotlin {
     
     sourceSets {
         androidMain.dependencies {
-            implementation(libs.room.runtime)
+            // Android needs the platform-specific runtime
+            implementation(libs.room.runtime.android)
             implementation(libs.sqlite.bundled)
         }
         commonMain.dependencies {
