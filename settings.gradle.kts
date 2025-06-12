@@ -14,6 +14,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "OCR_KMM"
+rootProject.name = "MUlitplatformOCR"
 include(":androidApp")
 include(":shared")

@@ -1,12 +1,12 @@
 [
   {
-    "moduleId": "androidx.sqlite:sqlite-bundled:2.5.0",
-    "file": "/Users/joseferreyra/Development/KMM_OCR/.kotlin/metadata/kotlinTransformedCInteropMetadataLibraries/androidx.sqlite-sqlite-bundled-2.5.0-nativeMain-cinterop/androidx.sqlite_sqlite-bundled-cinterop-androidXBundledSqlite-BHP1JA.klib",
+    "moduleId": "androidx.sqlite:sqlite-bundled:2.5.1",
+    "file": "/Users/joseferreyra/Development/KMM_OCR/.kotlin/metadata/kotlinTransformedCInteropMetadataLibraries/androidx.sqlite-sqlite-bundled-2.5.1-nativeMain-cinterop/androidx.sqlite_sqlite-bundled-cinterop-androidXBundledSqlite-BHP1JA.klib",
     "sourceSetName": "nativeMain"
   },
   {
-    "moduleId": "androidx.sqlite:sqlite-framework:2.5.0",
-    "file": "/Users/joseferreyra/Development/KMM_OCR/.kotlin/metadata/kotlinTransformedCInteropMetadataLibraries/androidx.sqlite-sqlite-framework-2.5.0-nativeMain-cinterop/androidx.sqlite_sqlite-framework-cinterop-sqlite3-kyeICw.klib",
+    "moduleId": "androidx.sqlite:sqlite-framework:2.5.1",
+    "file": "/Users/joseferreyra/Development/KMM_OCR/.kotlin/metadata/kotlinTransformedCInteropMetadataLibraries/androidx.sqlite-sqlite-framework-2.5.1-nativeMain-cinterop/androidx.sqlite_sqlite-framework-cinterop-sqlite3-kyeICw.klib",
     "sourceSetName": "nativeMain"
   },
   {

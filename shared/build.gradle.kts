@@ -18,15 +18,23 @@ kotlin {
             }
         }
     }
-    listOf(
-        iosX64(),
-        iosArm64(),
-        iosSimulatorArm64()
-    ).forEach {
-        it.binaries.framework {
-            baseName = "shared"
-            isStatic = true
-            linkerOpts.add("-lsqlite3")
+    val xcfName = "shared"
+
+    iosX64 {
+        binaries.framework {
+            baseName = xcfName
+        }
+    }
+
+    iosArm64 {
+        binaries.framework {
+            baseName = xcfName
+        }
+    }
+
+    iosSimulatorArm64 {
+        binaries.framework {
+            baseName = xcfName
         }
     }
 
@@ -61,10 +69,6 @@ kotlin {
             implementation(libs.kotlin.test)
         }
     }
-
-    sourceSets.commonMain{
-        kotlin.srcDir("build/generated/ksp/metadata")
-    }
 }
 
 android {
@@ -79,14 +83,12 @@ android {
     }
 }
 
+
 dependencies {
-    ksp(libs.room.compiler)
-    afterEvaluate {
-        add("kspCommonMainMetadata", libs.room.compiler)
-        add("kspIosSimulatorArm64", libs.room.compiler)
-        add("kspIosX64", libs.room.compiler)
-        add("kspIosArm64", libs.room.compiler)
-    }
+    add("kspAndroid", libs.room.compiler)
+    add("kspIosSimulatorArm64", libs.room.compiler)
+    add("kspIosX64", libs.room.compiler)
+    add("kspIosArm64", libs.room.compiler)
 }
 
 room {

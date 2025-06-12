@@ -1,12 +1,12 @@
 [versions]
-agp = "8.10.0"
-kotlin = "2.1.20"
+agp = "8.10.1"
+kotlin = "2.1.21"
 compose = "1.5.4"
 compose-material3 = "1.1.2"
 androidx-activityCompose = "1.8.0"
-room = "2.7.0"
-ksp = "2.1.20-2.0.0"
-sqlite = "2.5.0-SNAPSHOT"
+room = "2.7.1"
+ksp = "2.1.21-2.0.2"
+sqlite = "2.5.1"
 
 [libraries]
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
@@ -31,3 +31,4 @@ kotlinCocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = 
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 room = { id = "androidx.room", version.ref = "room" }
+androidKmpLibrary = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
