@@ -7,9 +7,8 @@ import platform.Foundation.NSHomeDirectory
 fun getOCRDatabase(): OCRDatabase {
     val dbFile = NSHomeDirectory() + "/ocrDatabase.db"
     return Room.databaseBuilder<OCRDatabase>(
-        name = dbFile,
-        factory = { OCRDatabase::class.instantiateImpl() }
+        name = dbFile
     )
-    .setDriver(BundledSQLiteDriver(dbFile))
+    .setDriver(BundledSQLiteDriver())
     .build()
 }
