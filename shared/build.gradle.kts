@@ -1,3 +1,4 @@
+import com.android.build.api.dsl.androidLibrary
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
@@ -9,6 +10,7 @@ plugins {
 }
 
 kotlin {
+
     androidTarget {
         compilations.all {
             compileTaskProvider.configure {
@@ -18,15 +20,23 @@ kotlin {
             }
         }
     }
-    listOf(
-        iosX64(),
-        iosArm64(),
-        iosSimulatorArm64()
-    ).forEach {
-        it.binaries.framework {
-            baseName = "shared"
-            isStatic = true
-            linkerOpts.add("-lsqlite3")
+    val xcfName = "shared"
+
+    iosX64 {
+        binaries.framework {
+            baseName = xcfName
+        }
+    }
+
+    iosArm64 {
+        binaries.framework {
+            baseName = xcfName
+        }
+    }
+
+    iosSimulatorArm64 {
+        binaries.framework {
+            baseName = xcfName
         }
     }
 
@@ -44,7 +54,8 @@ kotlin {
     
     sourceSets {
         androidMain.dependencies {
-            implementation(libs.room.runtime)
+            // Android needs the platform-specific runtime
+            implementation(libs.room.runtime.android)
             implementation(libs.sqlite.bundled)
         }
         commonMain.dependencies {
@@ -53,6 +64,7 @@ kotlin {
             implementation(libs.sqlite.bundled)
         }
         iosMain.dependencies {
+            implementation(libs.room.runtime)
             implementation(libs.sqlite.bundled)
         }
         commonTest.dependencies {
@@ -73,11 +85,12 @@ android {
     }
 }
 
+
 dependencies {
-    ksp(libs.room.compiler)
-    add("kspIosSimulatorArm64", libs.room.compiler)
-    add("kspIosX64", libs.room.compiler)
-    add("kspIosArm64", libs.room.compiler)
+    add("kspAndroid", libs.androidx.room.compiler)
+    add("kspIosSimulatorArm64", libs.androidx.room.compiler)
+    add("kspIosX64", libs.androidx.room.compiler)
+    add("kspIosArm64", libs.androidx.room.compiler)
 }
 
 room {

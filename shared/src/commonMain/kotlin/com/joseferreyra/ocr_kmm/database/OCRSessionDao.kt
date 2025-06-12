@@ -12,7 +12,7 @@ interface OCRSessionDao {
     @Insert
     fun insertSession(session: OCRSession)
 
-    @Query ("SELECT * FROM OCRSession")
+    @Query ("SELECT * FROM ocr_sessions")
     fun getAllSessions(): Flow<List<OCRSession>>
 
     @Delete
