@@ -2,10 +2,10 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "294b059c485c5cc42ebcb8ceb4ef15e0",
+    "identityHash": "ca9510e7de2989c79ac602bb3ae0cc13",
     "entities": [
       {
-        "tableName": "OCRSession",
+        "tableName": "ocr_sessions",
         "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `dateTime` INTEGER NOT NULL, `values` TEXT NOT NULL)",
         "fields": [
           {
@@ -37,7 +37,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '294b059c485c5cc42ebcb8ceb4ef15e0')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ca9510e7de2989c79ac602bb3ae0cc13')"
     ]
   }
 }

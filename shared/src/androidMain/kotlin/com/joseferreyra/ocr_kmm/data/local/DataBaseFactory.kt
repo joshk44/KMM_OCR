@@ -7,7 +7,7 @@ import com.joseferreyra.ocr_kmm.database.getOCRDatabase
 actual class DatabaseFactory (
     private val context: Context)
 {
-    actual fun create(): OCRDatabase? {
+    actual fun create(): OCRDatabase {
         return getOCRDatabase( context )
     }
 }
